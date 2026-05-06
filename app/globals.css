@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0A0A;
+  --background: #0a0a0a;
   --surface: #111111;
-  --surface-2: #1A1A1A;
+  --surface-2: #1a1a1a;
   --edge: #222222;
-  --accent: #FF6B00;
-  --accent-light: #FF8533;
-  --secondary: #A0A0A0;
+  --accent: #ff6b00;
+  --accent-light: #ff8533;
+  --secondary: #a0a0a0;
   --tertiary: #555555;
 }
 
@@ -37,23 +37,108 @@ body {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes floatB {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-14px) rotate(12deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatC {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(45deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-8px) rotate(45deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes orbitSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes arcPulse {
+  0%,
+  100% {
+    opacity: 0.07;
+  }
+  50% {
+    opacity: 0.14;
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @layer utilities {
@@ -69,13 +154,40 @@ body {
   .animate-pulse-dot {
     animation: pulseDot 2s ease-in-out infinite;
   }
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .animate-float-a {
+    animation: floatA 4.5s ease-in-out infinite;
+  }
+  .animate-float-b {
+    animation: floatB 5.8s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+  .animate-float-c {
+    animation: floatC 7s ease-in-out infinite;
+    animation-delay: 2.5s;
+  }
+  .animate-orbit-slow {
+    animation: orbitSlow 40s linear infinite;
+  }
+  .animate-arc-pulse {
+    animation: arcPulse 4s ease-in-out infinite;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
   .text-gradient-orange {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF9A3C 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff9a3c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -83,7 +195,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

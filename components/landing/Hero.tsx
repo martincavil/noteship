@@ -1,6 +1,9 @@
 import { useTranslations } from "next-intl";
-
-function BrowserMockup({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
+function BrowserMockup({
+  t,
+}: {
+  t: ReturnType<typeof useTranslations<"hero">>;
+}) {
   return (
     <div
       className="w-full rounded-xl border border-edge overflow-hidden"
@@ -108,6 +111,313 @@ export function Hero() {
             "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,107,0,0.06) 0%, transparent 70%)",
         }}
       />
+
+      {/* ── Decorative shape system ── */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden"
+      >
+        {/* Dot grid texture */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,107,0,0.18) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 35%, black 30%, transparent 80%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 35%, black 30%, transparent 80%)",
+          }}
+        />
+
+        {/* Outer rotating arc ring */}
+        <svg
+          className="absolute animate-arc-pulse hidden md:block"
+          style={{
+            left: "50%",
+            top: "32%",
+            transform: "translate(-50%, -50%)",
+            width: 920,
+            height: 920,
+          }}
+          viewBox="0 0 920 920"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="heroArcOuter" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#FF6B00" stopOpacity="0" />
+              <stop offset="35%" stopColor="#FF6B00" stopOpacity="1" />
+              <stop offset="65%" stopColor="#FF9A3C" stopOpacity="1" />
+              <stop offset="100%" stopColor="#FF9A3C" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="460"
+            cy="460"
+            r="420"
+            stroke="url(#heroArcOuter)"
+            strokeWidth="1"
+            fill="none"
+            strokeDasharray="660 1980"
+            strokeDashoffset="-300"
+          />
+        </svg>
+
+        {/* Inner arc — bottom half only */}
+        <svg
+          className="absolute hidden md:block"
+          style={{
+            left: "50%",
+            top: "32%",
+            transform: "translate(-50%, -50%)",
+            width: 640,
+            height: 640,
+            opacity: 0.18,
+          }}
+          viewBox="0 0 640 640"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="heroArcInner" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#FF6B00" stopOpacity="0" />
+              <stop offset="50%" stopColor="#FF9A3C" stopOpacity="1" />
+              <stop offset="100%" stopColor="#FF6B00" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="320"
+            cy="320"
+            r="300"
+            stroke="url(#heroArcInner)"
+            strokeWidth="1.5"
+            fill="none"
+            strokeDasharray="480 1405"
+            strokeDashoffset="-562"
+          />
+        </svg>
+
+        {/* ── Corner brackets ── */}
+        {/* Top-left */}
+        <div
+          className="absolute hidden md:block"
+          style={{ top: "17%", left: "calc(50% - 400px)" }}
+        >
+          <div className="relative w-8 h-8">
+            <div
+              className="absolute top-0 left-0 w-8 h-px"
+              style={{
+                background: "linear-gradient(to right, #FF6B00, transparent)",
+              }}
+            />
+            <div
+              className="absolute top-0 left-0 h-8 w-px"
+              style={{
+                background: "linear-gradient(to bottom, #FF6B00, transparent)",
+              }}
+            />
+          </div>
+        </div>
+        {/* Top-right */}
+        <div
+          className="absolute hidden md:block"
+          style={{ top: "17%", right: "calc(50% - 400px)" }}
+        >
+          <div className="relative w-8 h-8">
+            <div
+              className="absolute top-0 right-0 w-8 h-px"
+              style={{
+                background: "linear-gradient(to left, #FF6B00, transparent)",
+              }}
+            />
+            <div
+              className="absolute top-0 right-0 h-8 w-px"
+              style={{
+                background: "linear-gradient(to bottom, #FF6B00, transparent)",
+              }}
+            />
+          </div>
+        </div>
+        {/* Bottom-left */}
+        <div
+          className="absolute hidden md:block"
+          style={{ top: "calc(17% + 360px)", left: "calc(50% - 400px)" }}
+        >
+          <div className="relative w-8 h-8">
+            <div
+              className="absolute bottom-0 left-0 w-8 h-px"
+              style={{
+                background: "linear-gradient(to right, #FF6B00, transparent)",
+              }}
+            />
+            <div
+              className="absolute bottom-0 left-0 h-8 w-px"
+              style={{
+                background: "linear-gradient(to top, #FF6B00, transparent)",
+              }}
+            />
+          </div>
+        </div>
+        {/* Bottom-right */}
+        <div
+          className="absolute hidden md:block"
+          style={{ top: "calc(17% + 360px)", right: "calc(50% - 400px)" }}
+        >
+          <div className="relative w-8 h-8">
+            <div
+              className="absolute bottom-0 right-0 w-8 h-px"
+              style={{
+                background: "linear-gradient(to left, #FF6B00, transparent)",
+              }}
+            />
+            <div
+              className="absolute bottom-0 right-0 h-8 w-px"
+              style={{
+                background: "linear-gradient(to top, #FF6B00, transparent)",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* ── Lateral accent lines ── */}
+        <div
+          className="absolute hidden lg:block"
+          style={{
+            top: "36%",
+            left: "calc(50% - 520px)",
+            width: 90,
+            height: 1,
+            background:
+              "linear-gradient(to right, transparent, rgba(255,107,0,0.45))",
+          }}
+        />
+        <div
+          className="absolute hidden lg:block"
+          style={{
+            top: "36%",
+            right: "calc(50% - 520px)",
+            width: 90,
+            height: 1,
+            background:
+              "linear-gradient(to left, transparent, rgba(255,107,0,0.45))",
+          }}
+        />
+        <div
+          className="absolute hidden lg:block"
+          style={{
+            top: "17%",
+            left: "calc(50% - 480px)",
+            width: 1,
+            height: 200,
+            background:
+              "linear-gradient(to bottom, transparent, rgba(255,107,0,0.12), transparent)",
+          }}
+        />
+        <div
+          className="absolute hidden lg:block"
+          style={{
+            top: "17%",
+            right: "calc(50% - 480px)",
+            width: 1,
+            height: 200,
+            background:
+              "linear-gradient(to bottom, transparent, rgba(255,107,0,0.12), transparent)",
+          }}
+        />
+
+        {/* ── Floating particles ── */}
+        <div
+          className="absolute animate-float-a hidden sm:block"
+          style={{ top: "22%", left: "calc(50% - 310px)" }}
+        >
+          <div
+            className="w-2 h-2 rounded-full"
+            style={{
+              background: "#FF6B00",
+              boxShadow: "0 0 10px rgba(255,107,0,0.6)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-b hidden sm:block"
+          style={{ top: "26%", right: "calc(50% - 280px)" }}
+        >
+          <div
+            className="w-1.5 h-1.5 rounded-full"
+            style={{
+              background: "#FF9A3C",
+              boxShadow: "0 0 8px rgba(255,154,60,0.5)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-c hidden md:block"
+          style={{ top: "44%", left: "calc(50% - 360px)" }}
+        >
+          <div
+            className="w-2 h-2"
+            style={{
+              background: "#FF6B00",
+              transform: "rotate(45deg)",
+              boxShadow: "0 0 8px rgba(255,107,0,0.4)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-a hidden md:block"
+          style={{ top: "50%", right: "calc(50% - 340px)" }}
+        >
+          <div
+            className="w-1.5 h-1.5 rounded-full"
+            style={{
+              background: "#FF8533",
+              boxShadow: "0 0 6px rgba(255,133,51,0.5)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-b hidden lg:block"
+          style={{ top: "30%", left: "calc(50% - 430px)" }}
+        >
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{
+              background: "rgba(255,107,0,0.55)",
+              boxShadow: "0 0 16px rgba(255,107,0,0.35)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-c hidden lg:block"
+          style={{ top: "40%", right: "calc(50% - 420px)" }}
+        >
+          <div
+            className="w-2.5 h-2.5 rounded-full"
+            style={{
+              background: "rgba(255,154,60,0.45)",
+              boxShadow: "0 0 12px rgba(255,154,60,0.3)",
+            }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-a hidden lg:block"
+          style={{ top: "20%", left: "calc(50% - 200px)" }}
+        >
+          <div
+            className="w-1 h-1 rounded-full"
+            style={{ background: "rgba(255,107,0,0.6)" }}
+          />
+        </div>
+        <div
+          className="absolute animate-float-c hidden lg:block"
+          style={{ top: "56%", right: "calc(50% - 190px)" }}
+        >
+          <div
+            className="w-1 h-1 rounded-full"
+            style={{ background: "rgba(255,154,60,0.5)" }}
+          />
+        </div>
+      </div>
 
       <div className="relative z-10 w-full max-w-4xl mx-auto">
         {/* Badge */}
