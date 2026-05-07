@@ -18,7 +18,7 @@
     "forWho3": "Petites équipes dev",
     "ctaPrimary": "Réserver ma place →",
     "ctaSecondary": "Voir comment ça marche",
-    "urgency": "✦ 7 places restantes · 1 mois Pro offert aux 10 premiers",
+    "urgency": "✦ {spotsLeft} places restantes · 1 mois Pro offert aux 10 premiers",
     "socialProofCount": "340+",
     "socialProofLabel": "makers déjà sur la liste",
     "mockupUrl": "votre-app.com/changelog",
@@ -160,7 +160,7 @@
     "perk2": "Accès direct au builder — pas un ticket de support",
     "perk3": "Vos retours shippés en jours, pas en trimestres",
     "perk4": "Badge « Membre Fondateur » sur votre profil, pour toujours",
-    "spots": "7 des 10 places fondatrices restantes",
+    "spots": "{spotsLeft} des 10 places fondatrices restantes",
     "noSpam": "Pas de newsletters. Uniquement les updates produit."
   },
   "waitlistForm": {

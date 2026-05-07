@@ -18,7 +18,7 @@
     "forWho3": "Small dev teams",
     "ctaPrimary": "Claim your spot →",
     "ctaSecondary": "See how it works",
-    "urgency": "✦ 7 of 10 founding spots left · first 10 get 1 month Pro free",
+    "urgency": "✦ {spotsLeft} of 10 founding spots left · first 10 get 1 month Pro free",
     "socialProofCount": "340+",
     "socialProofLabel": "makers already on the waitlist",
     "mockupUrl": "yourapp.com/changelog",
@@ -160,7 +160,7 @@
     "perk2": "Direct line to the builder — not a support ticket",
     "perk3": "Your feedback ships in days, not quarters",
     "perk4": "Founding Member badge on your profile, forever",
-    "spots": "7 of 10 founding spots remaining",
+    "spots": "{spotsLeft} of 10 founding spots remaining",
     "noSpam": "No newsletters. Just product updates."
   },
   "waitlistForm": {

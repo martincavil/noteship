@@ -155,7 +155,7 @@ function FlipCard({
   return (
     <div
       style={{ perspective: "1200px" }}
-      className="cursor-pointer"
+      className="cursor-pointer h-full"
       onMouseEnter={() => { hoveredRef.current = true; }}
       onMouseLeave={() => { hoveredRef.current = false; }}
       onClick={() => setFlipped((f) => !f)}
@@ -169,6 +169,7 @@ function FlipCard({
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
           position: "relative",
           willChange: "transform",
+          height: "100%",
         }}
       >
         {/* Front */}
@@ -176,6 +177,7 @@ function FlipCard({
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
+            height: "100%",
           }}
         >
           <CardFace data={front} variant="front" />

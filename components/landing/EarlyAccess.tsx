@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { WaitlistForm } from "@/components/ui/WaitlistForm";
 
-export function EarlyAccess() {
+export function EarlyAccess({ spotsLeft }: { spotsLeft: number }) {
   const t = useTranslations("earlyAccess");
 
   const perks = [
@@ -27,7 +27,7 @@ export function EarlyAccess() {
               aria-hidden="true"
             />
             <span className="text-accent font-bold text-lg font-mono">
-              {t("spots")}
+              {t("spots", { spotsLeft })}
             </span>
           </div>
 

@@ -97,7 +97,7 @@ function BrowserMockup({
   );
 }
 
-export function Hero() {
+export function Hero({ spotsLeft }: { spotsLeft: number }) {
   const t = useTranslations("hero");
 
   return (
@@ -469,7 +469,7 @@ export function Hero() {
 
         {/* Urgency */}
         <p className="animate-fade-up delay-300 text-xs text-tertiary mb-8">
-          {t("urgency")}
+          {t("urgency", { spotsLeft })}
         </p>
 
         {/* Social proof */}
