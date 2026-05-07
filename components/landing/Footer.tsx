@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
@@ -9,9 +10,18 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
           {/* Brand */}
           <div>
-            <p className="text-white font-bold text-xl tracking-tight mb-1">
-              Noteship
-            </p>
+            <div className="flex items-center gap-2.5 mb-1">
+              <Image
+                src="/noteship-logo.png"
+                alt="Noteship"
+                width={24}
+                height={24}
+                className="rounded-md"
+              />
+              <p className="text-white font-bold text-xl tracking-tight">
+                Noteship
+              </p>
+            </div>
             <p className="text-tertiary text-sm">{t("tagline")}</p>
           </div>
 

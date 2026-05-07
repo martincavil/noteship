@@ -1,138 +1,49 @@
-import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-import { Resend } from "resend";
+import { z } from "zod";
+import { createSupabaseClient } from "@/lib/supabase";
+import { createResendClient } from "@/lib/resend";
 
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) throw new Error("Supabase env vars missing");
-  return createClient(url, key);
-}
+const bodySchema = z.object({
+  email: z.string().email(),
+  locale: z.enum(["en", "fr"]).default("en"),
+});
 
-function getResend() {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error("Resend API key missing");
-  return new Resend(key);
-}
+function buildEmailHtml(locale: "en" | "fr"): string {
+  const isFr = locale === "fr";
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const content = isFr
+    ? `Tu es bien inscrit sur la waitlist ! On te tient au courant dès que Noteship est disponible. Merci beaucoup pour ton soutien — n'hésite pas à nous faire des retours ici : <a href="mailto:martin@noteship.app" style="color:#FF6B00;">martin@noteship.app</a>`
+    : `You're on the list! We'll let you know as soon as Noteship is ready to launch. Thank you so much for your support — feel free to share feedback anytime at <a href="mailto:martin@noteship.app" style="color:#FF6B00;">martin@noteship.app</a>`;
 
-export async function POST(request: NextRequest) {
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
-  }
+  const footer = isFr
+    ? "Tu reçois cet email car tu t'es inscrit sur noteship.app"
+    : "You received this email because you signed up at noteship.app";
 
-  if (
-    typeof body !== "object" ||
-    body === null ||
-    !("email" in body) ||
-    typeof (body as Record<string, unknown>).email !== "string"
-  ) {
-    return NextResponse.json({ error: "Email is required" }, { status: 400 });
-  }
-
-  const { email, locale = "en" } = body as { email: string; locale?: string };
-
-  if (!emailRegex.test(email)) {
-    return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
-  }
-
-  const sanitizedLocale =
-    locale === "fr" || locale === "en" ? locale : "en";
-
-  try {
-    const supabase = getSupabase();
-    const { error: dbError } = await supabase
-      .from("waitlist")
-      .insert({ email: email.toLowerCase().trim(), locale: sanitizedLocale });
-
-    if (dbError) {
-      if (dbError.code === "23505") {
-        return NextResponse.json(
-          { error: "Already on the waitlist" },
-          { status: 409 }
-        );
-      }
-      console.error("Supabase error:", dbError);
-      return NextResponse.json(
-        { error: "Could not save your email" },
-        { status: 500 }
-      );
-    }
-  } catch (err) {
-    console.error("Supabase connection error:", err);
-    return NextResponse.json(
-      { error: "Service unavailable" },
-      { status: 503 }
-    );
-  }
-
-  try {
-    const resend = getResend();
-    const isFr = sanitizedLocale === "fr";
-
-    await resend.emails.send({
-      from: "Noteship <hello@noteship.app>",
-      to: email,
-      subject: isFr
-        ? "Vous êtes sur la liste Noteship ✦"
-        : "You're on the Noteship waitlist ✦",
-      html: `
-<!DOCTYPE html>
-<html lang="${sanitizedLocale}">
+  return `<!DOCTYPE html>
+<html lang="${locale}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${isFr ? "Bienvenue sur Noteship" : "Welcome to Noteship"}</title>
 </head>
-<body style="margin:0;padding:0;background:#0A0A0A;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0A0A0A;padding:40px 0;">
+<body style="margin:0;padding:0;background:#0A0A0A;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background:#0A0A0A;padding:48px 0;">
     <tr>
       <td align="center">
-        <table width="560" cellpadding="0" cellspacing="0" style="background:#111111;border:1px solid #222222;border-radius:16px;overflow:hidden;max-width:560px;">
+        <table width="560" cellpadding="0" cellspacing="0" role="presentation" style="background:#111111;border:1px solid #222222;border-radius:16px;overflow:hidden;max-width:560px;width:100%;">
           <tr>
-            <td style="padding:40px 40px 0;">
-              <p style="margin:0 0 32px;font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">Noteship</p>
-              <h1 style="margin:0 0 16px;font-size:28px;font-weight:800;color:#FFFFFF;line-height:1.2;letter-spacing:-0.03em;">
-                ${isFr ? "Vous êtes sur la liste ✦" : "You're on the list ✦"}
+            <td style="padding:40px 40px 32px;">
+              <p style="margin:0 0 32px;font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">Noteship</p>
+              <h1 style="margin:0 0 20px;font-size:26px;font-weight:800;color:#FFFFFF;line-height:1.25;letter-spacing:-0.03em;">
+                ${isFr ? "Tu es sur la waitlist ✦" : "You're on the waitlist ✦"}
               </h1>
-              <p style="margin:0 0 24px;font-size:16px;color:#A0A0A0;line-height:1.6;">
-                ${
-                  isFr
-                    ? "Merci de rejoindre Noteship en tant que membre fondateur. Vous serez parmi les premiers à découvrir notre outil changelog pour les makers indépendants."
-                    : "Thanks for joining Noteship as a founding member. You'll be among the first to experience the simplest changelog tool for indie makers."
-                }
-              </p>
-              <div style="background:#1A1A1A;border:1px solid rgba(255,107,0,0.2);border-radius:12px;padding:24px;margin-bottom:24px;">
-                <p style="margin:0 0 12px;font-size:13px;font-weight:600;color:#FF6B00;text-transform:uppercase;letter-spacing:0.08em;">
-                  ${isFr ? "Vos avantages fondateurs" : "Your founding perks"}
-                </p>
-                <ul style="margin:0;padding:0;list-style:none;">
-                  ${[
-                    isFr ? "1 mois Pro offert, sans condition" : "1 month Pro free, no questions asked",
-                    isFr ? "Accès direct au créateur" : "Direct access to the builder (that's me)",
-                    isFr ? "Vos retours intégrés en jours" : "Your feedback ships in days, not quarters",
-                    isFr ? 'Badge "Membre Fondateur" à vie' : '"Founding Member" badge forever',
-                  ]
-                    .map(
-                      (perk) =>
-                        `<li style="padding:6px 0;font-size:14px;color:#A0A0A0;"><span style="color:#FF6B00;margin-right:8px;">✦</span>${perk}</li>`
-                    )
-                    .join("")}
-                </ul>
-              </div>
-              <p style="margin:0;font-size:14px;color:#555555;line-height:1.6;">
-                ${isFr ? "Je vous contacterai directement dès que Noteship sera prêt.<br>— Martin" : "I'll reach out personally when Noteship is ready.<br>— Martin"}
+              <p style="margin:0;font-size:15px;color:#A0A0A0;line-height:1.65;">
+                ${content}
               </p>
             </td>
           </tr>
           <tr>
-            <td style="padding:32px 40px;border-top:1px solid #222222;margin-top:32px;">
-              <p style="margin:0;font-size:12px;color:#333333;">
-                ${isFr ? "Pas de spam. Uniquement les actualités de Noteship." : "No spam. Just Noteship updates."}
+            <td style="padding:24px 40px;border-top:1px solid #1E1E1E;">
+              <p style="margin:0;font-size:12px;color:#444444;line-height:1.5;">
+                ${footer}
               </p>
             </td>
           </tr>
@@ -141,12 +52,69 @@ export async function POST(request: NextRequest) {
     </tr>
   </table>
 </body>
-</html>
-      `.trim(),
-    });
-  } catch (err) {
-    console.error("Email send error:", err);
+</html>`;
+}
+
+export async function POST(request: Request): Promise<Response> {
+  let rawBody: unknown;
+  try {
+    rawBody = await request.json();
+  } catch {
+    return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  return NextResponse.json({ success: true });
+  const parsed = bodySchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return Response.json(
+      { error: "Validation failed", issues: parsed.error.issues },
+      { status: 422 }
+    );
+  }
+
+  const { email, locale } = parsed.data;
+  const normalizedEmail = email.toLowerCase().trim();
+
+  const supabase = createSupabaseClient();
+
+  // Insert — catch unique constraint violation
+  const { error: insertError } = await supabase
+    .from("waitlist")
+    .insert({ email: normalizedEmail, locale });
+
+  if (insertError) {
+    if (insertError.code === "23505") {
+      return Response.json({ message: "already_registered" }, { status: 200 });
+    }
+    console.error("[waitlist] Supabase insert error:", insertError);
+    return Response.json({ error: "Could not save your email" }, { status: 500 });
+  }
+
+  // Get position (total count after insert)
+  const { count, error: countError } = await supabase
+    .from("waitlist")
+    .select("*", { count: "exact", head: true });
+
+  if (countError) {
+    console.error("[waitlist] Supabase count error:", countError);
+  }
+
+  const position = count ?? 1;
+
+  // Send confirmation email — non-blocking on failure
+  try {
+    const resend = createResendClient();
+    await resend.emails.send({
+      from: "Noteship <onboarding@resend.dev>",
+      to: normalizedEmail,
+      subject:
+        locale === "fr"
+          ? "Tu es sur la waitlist Noteship 🚀"
+          : "You're on the Noteship waitlist 🚀",
+      html: buildEmailHtml(locale),
+    });
+  } catch (emailErr) {
+    console.error("[waitlist] Resend error:", emailErr);
+  }
+
+  return Response.json({ success: true, position });
 }

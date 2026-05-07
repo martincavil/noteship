@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./ui/LanguageSwitcher";
 
@@ -7,9 +8,18 @@ export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-edge bg-background/80 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-        <span className="text-white font-bold text-xl tracking-tight select-none">
-          {t("brand")}
-        </span>
+        <div className="flex items-center gap-2.5 select-none">
+          <Image
+            src="/noteship-logo.png"
+            alt="Noteship"
+            width={28}
+            height={28}
+            className="rounded-md"
+          />
+          <span className="text-white font-bold text-xl tracking-tight">
+            {t("brand")}
+          </span>
+        </div>
 
         <nav className="hidden md:flex items-center gap-7">
           <a
