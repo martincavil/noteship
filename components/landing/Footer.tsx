@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="text-white font-bold text-xl tracking-tight mb-1">
-              Logstory
+              Noteship
             </p>
             <p className="text-tertiary text-sm">{t("tagline")}</p>
           </div>

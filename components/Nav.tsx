@@ -10,7 +10,29 @@ export function Nav() {
         <span className="text-white font-bold text-xl tracking-tight select-none">
           {t("brand")}
         </span>
-        <div className="flex items-center gap-5">
+
+        <nav className="hidden md:flex items-center gap-7">
+          <a
+            href="#features"
+            className="text-sm text-secondary hover:text-white transition-colors duration-150"
+          >
+            {t("features")}
+          </a>
+          <a
+            href="#how-it-works"
+            className="text-sm text-secondary hover:text-white transition-colors duration-150"
+          >
+            {t("howItWorks")}
+          </a>
+          <a
+            href="#pricing"
+            className="text-sm text-secondary hover:text-white transition-colors duration-150"
+          >
+            {t("pricing")}
+          </a>
+        </nav>
+
+        <div className="flex items-center gap-4">
           <LanguageSwitcher />
           <a
             href="#waitlist"

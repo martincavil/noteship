@@ -14,11 +14,11 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Logstory — Your product updates, beautifully told.",
+  title: "Noteship — Your product updates, beautifully told.",
   description:
     "The simplest changelog tool for indie makers. Beautiful public page, embeddable widget, automatic email notifications.",
   openGraph: {
-    title: "Logstory — Your product updates, beautifully told.",
+    title: "Noteship — Your product updates, beautifully told.",
     description:
       "The simplest changelog tool for indie makers. Beautiful public page, embeddable widget, automatic email notifications.",
     type: "website",

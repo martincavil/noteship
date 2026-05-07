@@ -75,18 +75,18 @@ export async function POST(request: NextRequest) {
     const isFr = sanitizedLocale === "fr";
 
     await resend.emails.send({
-      from: "Logstory <hello@logstory.io>",
+      from: "Noteship <hello@noteship.app>",
       to: email,
       subject: isFr
-        ? "Vous êtes sur la liste Logstory ✦"
-        : "You're on the Logstory waitlist ✦",
+        ? "Vous êtes sur la liste Noteship ✦"
+        : "You're on the Noteship waitlist ✦",
       html: `
 <!DOCTYPE html>
 <html lang="${sanitizedLocale}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${isFr ? "Bienvenue sur Logstory" : "Welcome to Logstory"}</title>
+  <title>${isFr ? "Bienvenue sur Noteship" : "Welcome to Noteship"}</title>
 </head>
 <body style="margin:0;padding:0;background:#0A0A0A;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#0A0A0A;padding:40px 0;">
@@ -95,15 +95,15 @@ export async function POST(request: NextRequest) {
         <table width="560" cellpadding="0" cellspacing="0" style="background:#111111;border:1px solid #222222;border-radius:16px;overflow:hidden;max-width:560px;">
           <tr>
             <td style="padding:40px 40px 0;">
-              <p style="margin:0 0 32px;font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">Logstory</p>
+              <p style="margin:0 0 32px;font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">Noteship</p>
               <h1 style="margin:0 0 16px;font-size:28px;font-weight:800;color:#FFFFFF;line-height:1.2;letter-spacing:-0.03em;">
                 ${isFr ? "Vous êtes sur la liste ✦" : "You're on the list ✦"}
               </h1>
               <p style="margin:0 0 24px;font-size:16px;color:#A0A0A0;line-height:1.6;">
                 ${
                   isFr
-                    ? "Merci de rejoindre Logstory en tant que membre fondateur. Vous serez parmi les premiers à découvrir notre outil changelog pour les makers indépendants."
-                    : "Thanks for joining Logstory as a founding member. You'll be among the first to experience the simplest changelog tool for indie makers."
+                    ? "Merci de rejoindre Noteship en tant que membre fondateur. Vous serez parmi les premiers à découvrir notre outil changelog pour les makers indépendants."
+                    : "Thanks for joining Noteship as a founding member. You'll be among the first to experience the simplest changelog tool for indie makers."
                 }
               </p>
               <div style="background:#1A1A1A;border:1px solid rgba(255,107,0,0.2);border-radius:12px;padding:24px;margin-bottom:24px;">
@@ -125,14 +125,14 @@ export async function POST(request: NextRequest) {
                 </ul>
               </div>
               <p style="margin:0;font-size:14px;color:#555555;line-height:1.6;">
-                ${isFr ? "Je vous contacterai directement dès que Logstory sera prêt.<br>— Martin" : "I'll reach out personally when Logstory is ready.<br>— Martin"}
+                ${isFr ? "Je vous contacterai directement dès que Noteship sera prêt.<br>— Martin" : "I'll reach out personally when Noteship is ready.<br>— Martin"}
               </p>
             </td>
           </tr>
           <tr>
             <td style="padding:32px 40px;border-top:1px solid #222222;margin-top:32px;">
               <p style="margin:0;font-size:12px;color:#333333;">
-                ${isFr ? "Pas de spam. Uniquement les actualités de Logstory." : "No spam. Just Logstory updates."}
+                ${isFr ? "Pas de spam. Uniquement les actualités de Noteship." : "No spam. Just Noteship updates."}
               </p>
             </td>
           </tr>
@@ -146,7 +146,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (err) {
     console.error("Email send error:", err);
-    // Still return success — DB insert worked, email is non-critical
   }
 
   return NextResponse.json({ success: true });

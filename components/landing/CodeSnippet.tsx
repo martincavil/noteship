@@ -60,7 +60,7 @@ export function CodeSnippet() {
             {/* Code */}
             <div className="bg-[#080808] p-6 font-mono text-sm leading-7 overflow-x-auto">
               <div>
-                <span className="text-[#666]">{"<!-- Logstory widget -->"}</span>
+                <span className="text-[#666]">{"<!-- Noteship widget -->"}</span>
               </div>
               <div>
                 <span className="text-accent">{"<script"}</span>
@@ -68,7 +68,7 @@ export function CodeSnippet() {
               <div className="pl-4">
                 <span className="text-[#7DD3FC]">src</span>
                 <span className="text-[#666]">{"="}</span>
-                <span className="text-[#86EFAC]">{'"https://cdn.logstory.io/widget.js"'}</span>
+                <span className="text-[#86EFAC]">{'"https://cdn.noteship.app/widget.js"'}</span>
               </div>
               <div className="pl-4">
                 <span className="text-[#7DD3FC]">data-project</span>

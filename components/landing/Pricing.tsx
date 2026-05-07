@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 function CheckIcon() {
@@ -21,14 +24,9 @@ function CheckIcon() {
 
 export function Pricing() {
   const t = useTranslations("pricing");
+  const [yearly, setYearly] = useState(false);
 
-  const freeFeatures = [
-    t("freeF1"),
-    t("freeF2"),
-    t("freeF3"),
-    t("freeF4"),
-  ];
-
+  const freeFeatures = [t("freeF1"), t("freeF2"), t("freeF3"), t("freeF4")];
   const proFeatures = [
     t("proF1"),
     t("proF2"),
@@ -42,12 +40,41 @@ export function Pricing() {
   ];
 
   return (
-    <section className="bg-[#0F0F0F] py-24 px-6">
+    <section id="pricing" className="bg-[#0F0F0F] py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-white tracking-tight">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white tracking-tight mb-8">
             {t("title")}
           </h2>
+
+          {/* Toggle */}
+          <div className="inline-flex items-center gap-1 bg-surface border border-edge rounded-full p-1">
+            <button
+              onClick={() => setYearly(false)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                !yearly
+                  ? "bg-accent text-black"
+                  : "text-secondary hover:text-white"
+              }`}
+            >
+              {t("toggleMonthly")}
+            </button>
+            <button
+              onClick={() => setYearly(true)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                yearly
+                  ? "bg-accent text-black"
+                  : "text-secondary hover:text-white"
+              }`}
+            >
+              {t("toggleYearly")}
+              <span
+                className={`${!yearly ? "text-accent" : "text-white border-white"} text-xs border border-accent/40 rounded-full px-1.5 py-0.5 leading-none`}
+              >
+                {t("yearlySaveTag")}
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -67,7 +94,10 @@ export function Pricing() {
 
             <ul className="space-y-3 mb-8 flex-1">
               {freeFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm text-secondary">
+                <li
+                  key={i}
+                  className="flex items-start gap-2.5 text-sm text-secondary"
+                >
                   <CheckIcon />
                   {f}
                 </li>
@@ -91,21 +121,35 @@ export function Pricing() {
             }}
           >
             <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <p className="text-secondary text-sm font-medium uppercase tracking-widest">
-                  {t("proName")}
-                </p>
-                <span className="text-xs text-accent border border-accent/30 bg-accent/5 px-2 py-0.5 rounded-full">
-                  {t("proAnnual")}
-                  <span className="text-tertiary ml-1">({t("proSave")})</span>
-                </span>
-              </div>
+              <p className="text-secondary text-sm font-medium uppercase tracking-widest mb-3">
+                {t("proName")}
+              </p>
               <div className="flex items-end gap-1">
-                <span className="text-5xl font-extrabold text-white">
-                  {t("proPrice")}
+                <span className="text-5xl font-extrabold text-white transition-all duration-300">
+                  {yearly ? t("proYearlyPrice") : t("proPrice")}
                 </span>
-                <span className="text-secondary mb-2">{t("proPeriod")}</span>
+                <div className="mb-2">
+                  <span className="text-secondary block leading-none">
+                    {yearly ? t("proYearlyPeriod") : t("proPeriod")}
+                  </span>
+                  {yearly && (
+                    <span className="text-xs text-accent mt-0.5 block">
+                      {t("proYearlySub")}
+                    </span>
+                  )}
+                </div>
               </div>
+              {!yearly && (
+                <p className="text-xs text-tertiary mt-2">
+                  or{" "}
+                  <button
+                    onClick={() => setYearly(true)}
+                    className="text-accent underline underline-offset-2 hover:no-underline"
+                  >
+                    {t("proAnnual")} ({t("proSave")})
+                  </button>
+                </p>
+              )}
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">

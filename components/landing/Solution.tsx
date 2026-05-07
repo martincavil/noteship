@@ -81,7 +81,7 @@ export function Solution() {
   const t = useTranslations("solution");
 
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-white tracking-tight">
