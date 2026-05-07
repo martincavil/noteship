@@ -435,9 +435,21 @@ export function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="animate-fade-up delay-200 text-lg text-secondary max-w-xl mx-auto mb-8 leading-relaxed">
+        <p className="animate-fade-up delay-200 text-lg text-secondary max-w-xl mx-auto mb-5 leading-relaxed">
           {t("subheadline")}
         </p>
+
+        {/* For who chips */}
+        <div className="animate-fade-up delay-200 flex flex-wrap items-center justify-center gap-2 mb-8">
+          {[t("forWho1"), t("forWho2"), t("forWho3")].map((label) => (
+            <span
+              key={label}
+              className="text-xs text-tertiary border border-edge rounded-full px-3 py-1"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
 
         {/* CTAs */}
         <div className="animate-fade-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
@@ -456,9 +468,34 @@ export function Hero() {
         </div>
 
         {/* Urgency */}
-        <p className="animate-fade-up delay-300 text-xs text-tertiary mb-16">
+        <p className="animate-fade-up delay-300 text-xs text-tertiary mb-8">
           {t("urgency")}
         </p>
+
+        {/* Social proof */}
+        <div className="animate-fade-up delay-300 flex items-center justify-center gap-3 mb-16">
+          <div className="flex -space-x-2">
+            {[
+              { k: "TW", bg: "#2D1B69", fg: "#A78BFA" },
+              { k: "SK", bg: "#1B3A2D", fg: "#6EE7B7" },
+              { k: "AM", bg: "#3A1B1B", fg: "#FCA5A5" },
+              { k: "LD", bg: "#1B2D3A", fg: "#7DD3FC" },
+              { k: "MC", bg: "#3A2D1B", fg: "#FCD34D" },
+            ].map((a) => (
+              <div
+                key={a.k}
+                className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-[9px] font-bold"
+                style={{ background: a.bg, color: a.fg, borderColor: "#0A0A0A" }}
+              >
+                {a.k}
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-secondary">
+            <span className="text-white font-semibold">{t("socialProofCount")}</span>{" "}
+            {t("socialProofLabel")}
+          </p>
+        </div>
 
         {/* Browser mockup */}
         <div className="animate-fade-up delay-400 relative max-w-3xl mx-auto">

@@ -1,5 +1,29 @@
 import { useTranslations } from "next-intl";
 
+function XIcon() {
+  return (
+    <div
+      className="w-8 h-8 rounded-lg flex items-center justify-center mb-4"
+      style={{ background: "rgba(239,68,68,0.1)" }}
+    >
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#EF4444"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </div>
+  );
+}
+
 export function Problem() {
   const t = useTranslations("problem");
 
@@ -25,9 +49,7 @@ export function Problem() {
               key={i}
               className="bg-surface border border-edge rounded-xl p-6 hover:border-[#2a2a2a] transition-colors duration-200"
             >
-              <div className="text-2xl mb-4" aria-hidden="true">
-                ❌
-              </div>
+              <XIcon />
               <h3 className="text-white font-semibold text-base mb-2">
                 {card.title}
               </h3>
