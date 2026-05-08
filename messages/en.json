@@ -42,7 +42,7 @@
     "s1Value": "5 min",
     "s1Label": "to go live",
     "s2Value": "10×",
-    "s2Label": "cheaper than Beamer",
+    "s2Label": "cheaper than the alternatives",
     "s3Value": "3",
     "s3Label": "ways to reach your users",
     "s4Value": "0",
@@ -51,9 +51,9 @@
   "problem": {
     "title": "You ship. They don't notice.",
     "subtitle": "Features only retain users when users know they exist.",
-    "card1Title": "Headway is a ghost",
-    "card1Desc": "No update since 2020. You're paying for an abandoned product. Your users deserve better.",
-    "card2Title": "Beamer charges $99/mo",
+    "card1Title": "Old tools are abandoned",
+    "card1Desc": "The incumbents haven't shipped in years. You're paying for a product that's slowly dying. Your users deserve better.",
+    "card2Title": "Others charge $99/mo",
     "card2Desc": "Enterprise pricing for an indie problem. That's your entire MRR — for a changelog.",
     "card3Title": "Notion is not a changelog",
     "card3Desc": "A shared doc with no widget, no emails, no branding. Your users never find it anyway."
@@ -65,7 +65,7 @@
     "feature2Title": "In-app 'What's New' widget",
     "feature2Desc": "A badge that lives inside your product. One click — users see every update. Install in 2 minutes. Stop losing users to features they didn't know existed.",
     "feature3Title": "Auto email notifications",
-    "feature3Desc": "Publish once. Every subscriber gets a clean email automatically. No Mailchimp, no sequences, no extra work.",
+    "feature3Desc": "Publish once. Every subscriber gets a clean email automatically. No extra tools, no sequences, no extra work.",
     "feature4Title": "AI drafts from GitHub",
     "feature4Desc": "Connect your repo and your changelog writes itself. Review the draft, hit publish. From merge to shipped story in seconds.",
     "feature4Badge": "Coming soon"
@@ -179,8 +179,8 @@
     "a2": "Yes, forever. One project, up to 10 subscribers, and a full public changelog page — no credit card required. Enough to start and validate.",
     "q3": "How does the widget embed work?",
     "a3": "One script tag in your HTML. No npm install, no framework-specific SDK, no configuration file. It works with React, Vue, plain HTML — whatever you ship with.",
-    "q4": "What's different from Headway or Beamer?",
-    "a4": "Headway hasn't shipped an update since 2020. Beamer charges $99/month — often more than an indie product's entire MRR. Noteship is actively maintained, costs $6.99, and was built for makers, not enterprise teams.",
+    "q4": "What makes Noteship different from other changelog tools?",
+    "a4": "Most alternatives are either abandoned or priced for enterprise teams. Noteship is actively maintained, costs $6.99, and was built for indie makers — not companies with 50-person marketing teams.",
     "q5": "What happens after I join the waitlist?",
     "a5": "You get a confirmation email immediately. When we launch this summer, you'll be among the first to get access — with all your founding member perks intact."
   },
