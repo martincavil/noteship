@@ -12,11 +12,10 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-1">
               <Image
-                src="/noteship-logo.png"
+                src="/noteship-logo.svg"
                 alt="Noteship"
-                width={24}
+                width={26}
                 height={24}
-                className="rounded-md"
               />
               <p className="text-white font-bold text-xl tracking-tight">
                 Noteship

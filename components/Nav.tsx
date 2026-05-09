@@ -10,11 +10,10 @@ export function Nav() {
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
         <div className="flex items-center gap-2.5 select-none">
           <Image
-            src="/noteship-logo.png"
+            src="/noteship-logo.svg"
             alt="Noteship"
-            width={28}
+            width={30}
             height={28}
-            className="rounded-md"
           />
           <span className="text-white font-bold text-xl tracking-tight">
             {t("brand")}
