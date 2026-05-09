@@ -20,7 +20,7 @@
     "ctaSecondary": "See how it works",
     "urgency": "✦ {spotsLeft} of 10 founding spots left · first 10 get 1 month Pro free",
     "socialProofCount": "340+",
-    "socialProofLabel": "makers already on the waitlist",
+    "socialProofLabel": "(fake) makers already on the waitlist",
     "mockupUrl": "yourapp.com/changelog",
     "mockupEntry1Tag": "New",
     "mockupEntry1Version": "v2.1",
@@ -149,7 +149,7 @@
     "eyebrow": "The story behind Noteship",
     "title": "Built by a founder tired of shipping in the dark.",
     "body": "I was shipping features every week and getting nothing back. No reactions, no feedback, no idea if anyone even noticed. My changelog was a Notion doc with zero monthly readers. I spent more time building features than telling people about them. I built Noteship to fix exactly that — a changelog that actually reaches users, without the $99/month price tag.",
-    "signed": "Martin Cavil, founder",
+    "signed": "<link>Martin Cavil</link>, founder",
     "twitterHandle": "@martincavil",
     "philosophy": "We handle the distribution. You write the story."
   },
@@ -221,6 +221,6 @@
     "twitter": "Twitter / X",
     "github": "GitHub",
     "email": "hello@noteship.app",
-    "copyright": "© 2025 Noteship · Built by Martin Cavil · Valencia, Spain"
+    "copyright": "© 2025 Noteship · Built by <link>Martin Cavil</link>"
   }
 }

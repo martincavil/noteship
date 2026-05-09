@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
         className={`px-1 py-0.5 rounded transition-colors duration-150 ${
           locale === "en"
             ? "text-white"
-            : "text-tertiary hover:text-white"
+            : "text-tertiary hover:text-white cursor-pointer"
         }`}
         aria-current={locale === "en" ? "true" : undefined}
       >
@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
         className={`px-1 py-0.5 rounded transition-colors duration-150 ${
           locale === "fr"
             ? "text-white"
-            : "text-tertiary hover:text-white"
+            : "text-tertiary hover:text-white cursor-pointer"
         }`}
         aria-current={locale === "fr" ? "true" : undefined}
       >

@@ -38,7 +38,7 @@ export function Footer() {
               {t("twitter")}
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/martincavil/noteship"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#444] hover:text-white text-sm transition-colors duration-150"

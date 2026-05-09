@@ -48,7 +48,20 @@ export function FounderStory() {
                   MC
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold">{t("signed")}</p>
+                  <p className="text-white text-sm font-semibold">
+                    {t.rich("signed", {
+                      link: (chunks) => (
+                        <a
+                          href="https://martincavil.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-accent transition-colors duration-150"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                    })}
+                  </p>
                   <a
                     href={`https://x.com/martincavil`}
                     target="_blank"
