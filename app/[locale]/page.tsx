@@ -7,7 +7,6 @@ import { Problem } from "@/components/landing/Problem";
 import { Solution } from "@/components/landing/Solution";
 import { CodeSnippet } from "@/components/landing/CodeSnippet";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { Testimonials } from "@/components/landing/Testimonials";
 import { FounderStory } from "@/components/landing/FounderStory";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
@@ -54,7 +53,6 @@ export default async function HomePage({
         <Solution />
         <CodeSnippet />
         <HowItWorks />
-        <Testimonials />
         <FounderStory />
         <Pricing />
         <FAQ />

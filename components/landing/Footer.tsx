@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t border-edge bg-background py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-1">
@@ -30,7 +30,7 @@ export function Footer() {
             aria-label="Footer navigation"
           >
             <a
-              href="https://twitter.com"
+              href="https://x.com/martincvl0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#444] hover:text-white text-sm transition-colors duration-150"
@@ -52,10 +52,6 @@ export function Footer() {
               {t("email")}
             </a>
           </nav>
-        </div>
-
-        <div className="border-t border-edge pt-8">
-          <p className="text-tertiary text-xs">{t("copyright")}</p>
         </div>
       </div>
     </footer>

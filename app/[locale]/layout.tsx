@@ -47,7 +47,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${geistSans.variable} antialiased`}>
+    <html lang={locale} className={`${geistSans.variable} antialiased`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-background text-white">
         <NextIntlClientProvider messages={messages}>
           {children}

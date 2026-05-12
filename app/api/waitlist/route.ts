@@ -67,7 +67,7 @@ export async function POST(request: Request): Promise<Response> {
   if (!parsed.success) {
     return Response.json(
       { error: "Validation failed", issues: parsed.error.issues },
-      { status: 422 }
+      { status: 422 },
     );
   }
 
@@ -86,7 +86,10 @@ export async function POST(request: Request): Promise<Response> {
       return Response.json({ message: "already_registered" }, { status: 200 });
     }
     console.error("[waitlist] Supabase insert error:", insertError);
-    return Response.json({ error: "Could not save your email" }, { status: 500 });
+    return Response.json(
+      { error: "Could not save your email" },
+      { status: 500 },
+    );
   }
 
   // Get position (total count after insert)
@@ -108,8 +111,8 @@ export async function POST(request: Request): Promise<Response> {
       to: normalizedEmail,
       subject:
         locale === "fr"
-          ? "Tu es sur la waitlist Noteship 🚀"
-          : "You're on the Noteship waitlist 🚀",
+          ? "Tu es sur la waitlist Noteship "
+          : "You're on the Noteship waitlist ",
       html: buildEmailHtml(locale),
     });
   } catch (emailErr) {

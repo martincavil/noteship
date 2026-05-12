@@ -43,9 +43,10 @@ export function Pricing() {
     <section id="pricing" className="bg-[#0F0F0F] py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white tracking-tight mb-8">
+          <h2 className="text-4xl font-bold text-white tracking-tight mb-4">
             {t("title")}
           </h2>
+          <p className="text-secondary text-sm mb-8">{t("badge")}</p>
 
           {/* Toggle */}
           <div className="inline-flex items-center gap-1 bg-surface border border-edge rounded-full p-1">
