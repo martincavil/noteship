@@ -428,7 +428,7 @@ export function Hero({ spotsLeft }: { spotsLeft: number }) {
         </div>
 
         {/* Headline */}
-        <h1 className="animate-fade-up delay-100 text-[clamp(48px,8vw,96px)] font-extrabold leading-[0.95] tracking-[-0.04em] text-white mt-6 mb-6">
+        <h1 className="animate-fade-up delay-100 text-[clamp(48px,8vw,90px)] font-extrabold leading-[0.90] tracking-[-0.04em] text-white mt-6 mb-6">
           {t("headline1")}
           <br />
           <span className="text-gradient-orange">{t("headline2")}</span>
@@ -473,7 +473,7 @@ export function Hero({ spotsLeft }: { spotsLeft: number }) {
         </p>
 
         {/* Social proof */}
-        <div className="animate-fade-up delay-300 flex items-center justify-center gap-3 mb-16">
+        {/* <div className="animate-fade-up delay-300 flex items-center justify-center gap-3 mb-16">
           <div className="flex -space-x-2">
             {[
               { k: "TW", bg: "#2D1B69", fg: "#A78BFA" },
@@ -495,7 +495,7 @@ export function Hero({ spotsLeft }: { spotsLeft: number }) {
             <span className="text-white font-semibold">{t("socialProofCount")}</span>{" "}
             {t("socialProofLabel")}
           </p>
-        </div>
+        </div> */}
 
         {/* Browser mockup */}
         <div className="animate-fade-up delay-400 relative max-w-3xl mx-auto">

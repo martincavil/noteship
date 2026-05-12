@@ -7,7 +7,7 @@ export function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-edge bg-background/80 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
+      <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16 relative">
         <div className="flex items-center gap-2.5 select-none">
           <Image
             src="/noteship-logo.svg"
@@ -20,7 +20,7 @@ export function Nav() {
           </span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
           <a
             href="#features"
             className="text-sm text-secondary hover:text-white transition-colors duration-150"

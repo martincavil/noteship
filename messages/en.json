@@ -10,9 +10,9 @@
   },
   "hero": {
     "badge": "✦ Early access · 10 founding spots",
-    "headline1": "Your users don't know",
-    "headline2": "what you just shipped.",
-    "subheadline": "A public changelog, an in-app 'What's New' badge, and automatic emails to subscribers — set up in 5 minutes, not 5 hours.",
+    "headline1": "You shipped.",
+    "headline2": "Nobody noticed.",
+    "subheadline": "Stop shipping into the void. Give your updates an audience — public changelog, in-app badge, and auto emails. Live in 5 minutes.",
     "forWho1": "Indie makers",
     "forWho2": "Solo founders",
     "forWho3": "Small dev teams",
@@ -50,8 +50,8 @@
   },
   "problem": {
     "title": "You ship. They don't notice.",
-    "subtitle": "Features only retain users when users know they exist.",
-    "card1Title": "Old tools are abandoned",
+    "subtitle": "Hidden features don't retain anyone. Your users can't love what they never find.",
+    "card1Title": "The incumbents went quiet",
     "card1Desc": "The incumbents haven't shipped in years. You're paying for a product that's slowly dying. Your users deserve better.",
     "card2Title": "Others charge $99/mo",
     "card2Desc": "Enterprise pricing for an indie problem. That's your entire MRR — for a changelog.",
@@ -59,13 +59,13 @@
     "card3Desc": "A shared doc with no widget, no emails, no branding. Your users never find it anyway."
   },
   "solution": {
-    "title": "One tool. Three ways to keep users hooked.",
+    "title": "One tool. Three ways your users actually find out.",
     "feature1Title": "Public changelog page",
-    "feature1Desc": "A dedicated page at yourapp.com/changelog. Chronological, filterable, fully branded. The kind of page that makes your product look professional from day one.",
+    "feature1Desc": "A dedicated page at yourapp.com/changelog. Chronological, filterable, fully branded. Not buried in docs. Not a Notion link. A real changelog page — the proof that you're still building.",
     "feature2Title": "In-app 'What's New' widget",
-    "feature2Desc": "A badge that lives inside your product. One click — users see every update. Install in 2 minutes. Stop losing users to features they didn't know existed.",
+    "feature2Desc": "A badge that lives inside your product. One click — users see every update. Install in 2 minutes. The features you build, finally seen.",
     "feature3Title": "Auto email notifications",
-    "feature3Desc": "Publish once. Every subscriber gets a clean email automatically. No extra tools, no sequences, no extra work.",
+    "feature3Desc": "Publish once. Every subscriber gets a clean email automatically. No sequences, no integrations, no extra work. Just reach.",
     "feature4Title": "AI drafts from GitHub",
     "feature4Desc": "Connect your repo and your changelog writes itself. Review the draft, hit publish. From merge to shipped story in seconds.",
     "feature4Badge": "Coming soon"
@@ -154,8 +154,8 @@
     "philosophy": "We handle the distribution. You write the story."
   },
   "earlyAccess": {
-    "title": "Get in before the doors open.",
-    "subtitle": "We're launching this summer. 10 founding spots — first come, first served. Not just early users: the people who shape the roadmap.",
+    "title": "The first 10 shape the product.",
+    "subtitle": "Launching this summer. 10 founding spots, first come first served. Not early users — the people who shape the roadmap.",
     "perk1": "1 month Pro free — no credit card, no conditions",
     "perk2": "Direct line to the builder — not a support ticket",
     "perk3": "Your feedback ships in days, not quarters",

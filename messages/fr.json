@@ -10,9 +10,9 @@
   },
   "hero": {
     "badge": "✦ Accès anticipé · 10 places fondatrices",
-    "headline1": "Vos users ne savent pas",
-    "headline2": "ce que vous venez de shipper.",
-    "subheadline": "Une page changelog publique, un widget in-app, et des emails automatiques à vos abonnés — setup en 5 minutes, pas en une journée.",
+    "headline1": "Vous avez shippé.",
+    "headline2": "Personne n'a vu.",
+    "subheadline": "Arrêtez de shipper dans le vide. Donnez une audience à vos updates — changelog public, badge in-app, emails automatiques. Live en 5 minutes.",
     "forWho1": "Makers indie",
     "forWho2": "Solopreneurs",
     "forWho3": "Petites équipes dev",
@@ -50,8 +50,8 @@
   },
   "problem": {
     "title": "Vous shippez. Ça passe inaperçu.",
-    "subtitle": "Une feature ne retient personne si vos users ne savent pas qu'elle existe.",
-    "card1Title": "Les vieux outils sont abandonnés",
+    "subtitle": "Personne ne retombe amoureux d'une feature qu'il n'a jamais vue.",
+    "card1Title": "Les acteurs historiques ont arrêté de builder",
     "card1Desc": "Les acteurs historiques n'ont rien livré depuis des années. Vous payez pour un produit qui s'éteint. Vos users méritent mieux.",
     "card2Title": "Les autres facturent 96,99 $/mois",
     "card2Desc": "Tarif grand compte pour un problème indie. C'est tout votre MRR — pour un changelog.",
@@ -59,13 +59,13 @@
     "card3Desc": "Un doc partagé sans widget, sans notifs, sans branding. Vos users ne le trouvent jamais."
   },
   "solution": {
-    "title": "Un seul outil. Trois façons de garder vos users.",
+    "title": "Un outil. Trois façons d'être enfin entendu.",
     "feature1Title": "Page changelog publique",
-    "feature1Desc": "Une page dédiée sur votre-app.com/changelog. Chronologique, filtrable, à vos couleurs. Le genre de page qui donne une crédibilité immédiate à votre produit.",
+    "feature1Desc": "Une page dédiée sur votre-app.com/changelog. Chronologique, filtrable, à vos couleurs. Pas un lien Notion. Pas un doc partagé. Une vraie page changelog — la preuve que vous continuez à builder.",
     "feature2Title": "Widget « Nouveautés » in-app",
-    "feature2Desc": "Un badge dans votre app. Un clic — vos users voient tout. Setup en 2 minutes. Stoppez le churn silencieux des features que personne ne connaît.",
+    "feature2Desc": "Un badge dans votre app. Un clic — vos users voient tout. Setup en 2 minutes. Les features que vous buildez, enfin vues.",
     "feature3Title": "Notifications email automatiques",
-    "feature3Desc": "Publiez une entrée. Chaque abonné reçoit un email propre automatiquement. Pas d'outils tiers, pas de séquence, pas de setup. C'est tout.",
+    "feature3Desc": "Publiez une entrée. Chaque abonné reçoit un email propre automatiquement. Pas d'outil tiers, pas de séquence. Juste vos users qui reçoivent.",
     "feature4Title": "Draft IA depuis GitHub",
     "feature4Desc": "Connectez votre repo et votre changelog se rédige tout seul. Relisez le draft, publiez. Du merge au post en quelques secondes.",
     "feature4Badge": "Bientôt disponible"
@@ -154,8 +154,8 @@
     "philosophy": "On gère la distribution. Vous écrivez l'histoire."
   },
   "earlyAccess": {
-    "title": "Entrez avant l'ouverture.",
-    "subtitle": "Lancement cet été. 10 places — premier arrivé, premier servi. Pas des beta testers : les gens qui vont façonner le produit.",
+    "title": "Les 10 premiers façonnent le produit.",
+    "subtitle": "Lancement cet été. 10 places, premier arrivé premier servi. Pas des beta testers — ceux qui vont façonner ce qu'on shippe.",
     "perk1": "1 mois Pro offert — sans CB, sans condition",
     "perk2": "Accès direct au builder — pas un ticket de support",
     "perk3": "Vos retours shippés en jours, pas en trimestres",
