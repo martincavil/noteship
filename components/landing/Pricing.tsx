@@ -52,7 +52,7 @@ export function Pricing() {
           <div className="inline-flex items-center gap-1 bg-surface border border-edge rounded-full p-1">
             <button
               onClick={() => setYearly(false)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
                 !yearly
                   ? "bg-accent text-black"
                   : "text-secondary hover:text-white"
@@ -62,7 +62,7 @@ export function Pricing() {
             </button>
             <button
               onClick={() => setYearly(true)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 cursor-pointer ${
                 yearly
                   ? "bg-accent text-black"
                   : "text-secondary hover:text-white"
@@ -141,11 +141,11 @@ export function Pricing() {
                 </div>
               </div>
               {!yearly && (
-                <p className="text-xs text-tertiary mt-2">
+                <p className="cursor-pointer text-xs text-tertiary mt-2">
                   or{" "}
                   <button
                     onClick={() => setYearly(true)}
-                    className="text-accent underline underline-offset-2 hover:no-underline"
+                    className="text-accent underline underline-offset-2 hover:no-underline cursor-pointer"
                   >
                     {t("proAnnual")} ({t("proSave")})
                   </button>

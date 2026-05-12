@@ -24,10 +24,10 @@ export function LanguageSwitcher() {
       <button
         onClick={() => switchLocale("en")}
         disabled={isPending}
-        className={`px-1 py-0.5 rounded transition-colors duration-150 ${
+        className={`px-1 py-0.5 rounded transition-colors duration-150 cursor-pointer ${
           locale === "en"
             ? "text-white"
-            : "text-tertiary hover:text-white cursor-pointer"
+            : "text-tertiary hover:text-white"
         }`}
         aria-current={locale === "en" ? "true" : undefined}
       >
@@ -37,10 +37,10 @@ export function LanguageSwitcher() {
       <button
         onClick={() => switchLocale("fr")}
         disabled={isPending}
-        className={`px-1 py-0.5 rounded transition-colors duration-150 ${
+        className={`px-1 py-0.5 rounded transition-colors duration-150 cursor-pointer ${
           locale === "fr"
             ? "text-white"
-            : "text-tertiary hover:text-white cursor-pointer"
+            : "text-tertiary hover:text-white"
         }`}
         aria-current={locale === "fr" ? "true" : undefined}
       >

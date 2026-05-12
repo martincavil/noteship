@@ -25,13 +25,13 @@ function BrowserMockup({
       <div className="bg-background px-6 py-5 space-y-5">
         {/* Filter bar */}
         <div className="flex items-center gap-2">
-          <button className="text-xs px-3 py-1 rounded-full bg-accent text-black font-medium">
+          <button className="text-xs px-3 py-1 rounded-full bg-accent text-black font-medium cursor-pointer">
             All
           </button>
-          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors">
+          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors cursor-pointer">
             Features
           </button>
-          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors">
+          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors cursor-pointer">
             Fixes
           </button>
         </div>
