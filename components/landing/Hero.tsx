@@ -1,101 +1,5 @@
 import { useTranslations } from "next-intl";
-function BrowserMockup({
-  t,
-}: {
-  t: ReturnType<typeof useTranslations<"hero">>;
-}) {
-  return (
-    <div
-      className="w-full rounded-xl border border-edge overflow-hidden"
-      style={{ boxShadow: "0 0 80px rgba(255,107,0,0.08)" }}
-    >
-      {/* Browser chrome */}
-      <div className="bg-surface-2 px-4 py-3 flex items-center gap-3 border-b border-edge">
-        <div className="flex gap-1.5 shrink-0">
-          <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-          <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
-          <div className="w-3 h-3 rounded-full bg-[#28C840]" />
-        </div>
-        <div className="flex-1 bg-background rounded-md px-3 py-1 text-xs text-tertiary text-center font-mono truncate">
-          {t("mockupUrl")}
-        </div>
-      </div>
-
-      {/* Fake changelog page */}
-      <div className="bg-background px-6 py-5 space-y-5">
-        {/* Filter bar */}
-        <div className="flex items-center gap-2">
-          <button className="text-xs px-3 py-1 rounded-full bg-accent text-black font-medium cursor-pointer">
-            All
-          </button>
-          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors cursor-pointer">
-            Features
-          </button>
-          <button className="text-xs px-3 py-1 rounded-full bg-surface border border-edge text-secondary hover:text-white transition-colors cursor-pointer">
-            Fixes
-          </button>
-        </div>
-
-        {/* Entry 1 */}
-        <div className="border-l-2 border-accent pl-4 pb-1">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">
-              {t("mockupEntry1Tag")}
-            </span>
-            <span className="text-xs text-tertiary font-mono">
-              {t("mockupEntry1Version")} · {t("mockupEntry1Date")}
-            </span>
-          </div>
-          <h3 className="text-white font-semibold text-sm mb-1">
-            {t("mockupEntry1Title")}
-          </h3>
-          <p className="text-secondary text-xs leading-relaxed line-clamp-2">
-            {t("mockupEntry1Desc")}
-          </p>
-        </div>
-
-        {/* Entry 2 */}
-        <div className="border-l-2 border-[#333] pl-4 pb-1">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-xs bg-surface border border-edge text-secondary px-2 py-0.5 rounded-full font-medium">
-              {t("mockupEntry2Tag")}
-            </span>
-            <span className="text-xs text-tertiary font-mono">
-              {t("mockupEntry2Version")} · {t("mockupEntry2Date")}
-            </span>
-          </div>
-          <h3 className="text-white font-semibold text-sm mb-1">
-            {t("mockupEntry2Title")}
-          </h3>
-          <p className="text-secondary text-xs leading-relaxed line-clamp-2">
-            {t("mockupEntry2Desc")}
-          </p>
-        </div>
-
-        {/* Entry 3 */}
-        <div className="border-l-2 border-[#333] pl-4 pb-1">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-xs bg-surface border border-edge text-secondary px-2 py-0.5 rounded-full font-medium">
-              {t("mockupEntry3Tag")}
-            </span>
-            <span className="text-xs text-tertiary font-mono">
-              {t("mockupEntry3Version")} · {t("mockupEntry3Date")}
-            </span>
-          </div>
-          <h3 className="text-white font-semibold text-sm mb-1">
-            {t("mockupEntry3Title")}
-          </h3>
-          <p className="text-secondary text-xs leading-relaxed line-clamp-2">
-            {t("mockupEntry3Desc")}
-          </p>
-        </div>
-
-        {/* Fade-out gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-      </div>
-    </div>
-  );
-}
+import { BrowserMockup } from "@/components/landing/BrowserMockup";
 
 export function Hero({ spotsLeft }: { spotsLeft: number }) {
   const t = useTranslations("hero");
@@ -499,7 +403,7 @@ export function Hero({ spotsLeft }: { spotsLeft: number }) {
 
         {/* Browser mockup */}
         <div className="animate-fade-up delay-400 relative max-w-3xl mx-auto">
-          <BrowserMockup t={t} />
+          <BrowserMockup />
         </div>
       </div>
     </section>

@@ -48,7 +48,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${geistSans.variable} antialiased`} data-scroll-behavior="smooth">
-      <body className="min-h-screen bg-background text-white">
+      <body className="min-h-screen bg-background text-white" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
