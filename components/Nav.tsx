@@ -40,6 +40,13 @@ export function Nav() {
           >
             {t("pricing")}
           </a>
+          <a
+            href="/changelog"
+            className="text-sm text-secondary hover:text-white transition-colors duration-150 flex items-center gap-1.5"
+          >
+            {t("changelog")}
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+          </a>
         </nav>
 
         <div className="flex items-center gap-4">
