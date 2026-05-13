@@ -14,7 +14,7 @@ export function Nav() {
             alt="Noteship"
             width={30}
             height={28}
-            style={{ width: 30, height: 28 }}
+            unoptimized
           />
           <span className="text-white font-bold text-xl tracking-tight">
             {t("brand")}

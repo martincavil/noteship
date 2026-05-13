@@ -20,7 +20,6 @@ export function FounderStory() {
   return (
     <section className="py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
-
         {/* Eyebrow */}
         <p className="text-accent text-xs font-medium tracking-widest uppercase mb-6">
           ✦ {t("eyebrow")}
@@ -32,7 +31,6 @@ export function FounderStory() {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-
           {/* Quote block — 3 cols */}
           <div className="lg:col-span-3">
             <div className="relative pl-6 border-l-2 border-accent">
@@ -63,7 +61,7 @@ export function FounderStory() {
                     })}
                   </p>
                   <a
-                    href={`https://x.com/martincavil`}
+                    href={`https://x.com/martincvl0`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-tertiary text-xs hover:text-accent transition-colors duration-150 flex items-center gap-1 mt-0.5"
@@ -87,7 +85,8 @@ export function FounderStory() {
               <div
                 className="text-4xl font-black mb-4 leading-none"
                 style={{
-                  background: "linear-gradient(135deg, #FF6B00 0%, #FF9A3C 100%)",
+                  background:
+                    "linear-gradient(135deg, #FF6B00 0%, #FF9A3C 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -100,7 +99,6 @@ export function FounderStory() {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

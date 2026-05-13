@@ -67,10 +67,10 @@
     "s4Label": "npm installs required"
   },
   "problem": {
-    "title": "You ship. They don't notice.",
+    "title": "Why your updates go unnoticed ?",
     "subtitle": "Most tools are expensive, complex, or abandoned. Your brilliant features go unnoticed. It's time to change that.",
     "card1Title": "Legacy tools, legacy prices",
-    "card1Desc": "Legacy tools charge $96.99/mo for a dying product. That's your entire MRR. You deserve better.",
+    "card1Desc": "Legacy tools charge $99 /mo for a dying product. That's your entire MRR. You deserve better.",
     "card2Title": "Notion is not a changelog",
     "card2Desc": "A Notion doc won't engage anyone. Without a widget or notifications, your users never see it. Your updates deserve a stage.",
     "card3Title": "Built for enterprise, not for makers",
@@ -109,7 +109,7 @@
     "step3Number": "03",
     "step3Title": "Your users find out",
     "step3Duration": "automatically",
-    "step3Desc": "✨ The Magic Happens. Your page is live, your widget updates, the email is sent. Your users suddenly see your work."
+    "step3Desc": "The Magic Happens. Your page is live, your widget updates, the email is sent. Your users suddenly see your work."
   },
   "testimonials": {
     "title": "Early Access Reviews",
@@ -125,7 +125,7 @@
     "t3Name": "Marcus Webb",
     "t3Handle": "@marcuswebb",
     "t3Role": "Dev & founder",
-    "t3Text": "I was paying $49/month for a changelog tool I hated. $6.99 and actually works for solo builders? Done.",
+    "t3Text": "I was paying $49/month for a changelog tool I hated. $3.99 and actually works for solo builders? Done.",
     "t4Name": "Priya Nair",
     "t4Handle": "@priyamakes",
     "t4Role": "Product designer",
@@ -172,7 +172,7 @@
     "philosophy": "We handle the distribution. You write the story."
   },
   "earlyAccess": {
-    "title": "The first 10 shape the product.",
+    "title": "Join the 10 makers who define the product",
     "subtitle": "Launching this summer. 10 founding spots, first come first served. Not early users — the people who shape the roadmap.",
     "perk1": "1 month Pro free — no credit card, no conditions",
     "perk2": "Direct line to the builder — not a support ticket",
@@ -198,7 +198,7 @@
     "q3": "How does the widget embed work?",
     "a3": "One script tag in your HTML. No npm install, no framework-specific SDK, no configuration file. It works with React, Vue, plain HTML — whatever you ship with.",
     "q4": "What makes Noteship different from other changelog tools?",
-    "a4": "Most alternatives are either abandoned or priced for enterprise teams. Noteship is actively maintained, costs $6.99, and was built for indie makers — not companies with 50-person marketing teams.",
+    "a4": "Most alternatives are either abandoned or priced for enterprise teams. Noteship is actively maintained, costs $3.99/month, and was built for indie makers — not companies with 50-person marketing teams.",
     "q5": "What happens after I join the waitlist?",
     "a5": "You get a confirmation email immediately. When we launch this summer, you'll be among the first to get access — with all your founding member perks intact."
   },
@@ -207,7 +207,7 @@
     "badge": "Less than a coffee per month",
     "toggleMonthly": "Monthly",
     "toggleYearly": "Yearly",
-    "yearlySaveTag": "Save 53%",
+    "yearlySaveTag": "Save 50%",
     "freeName": "To Validate Your Idea",
     "freePrice": "$0",
     "freePeriod": "/ month",
@@ -217,13 +217,13 @@
     "freeF4": "Noteship branding",
     "freeCta": "Start for free",
     "proName": "To Scale with Confidence",
-    "proPrice": "$6.99",
+    "proPrice": "$3.99",
     "proPeriod": "/ month",
-    "proYearlyPrice": "$4",
+    "proYearlyPrice": "$1.99",
     "proYearlyPeriod": "/ month",
-    "proYearlySub": "billed $39 / year",
-    "proAnnual": "$39 / year",
-    "proSave": "save 53%",
+    "proYearlySub": "billed $24 / year",
+    "proAnnual": "$24 / year",
+    "proSave": "save 50%",
     "proF1": "Everything in Free, plus:",
     "proF2": "Unlimited projects",
     "proF3": "Unlimited subscribers",
