@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { Geist } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 
@@ -67,6 +68,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${geistSans.variable} antialiased`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-background text-white" suppressHydrationWarning>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9KJTTZ04GX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9KJTTZ04GX');
+          `}
+        </Script>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
