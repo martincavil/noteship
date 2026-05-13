@@ -12,9 +12,9 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#0F0F0F]">
+    <section className="py-8 md:py-24 px-6 bg-[#0F0F0F]">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-4xl font-bold text-white tracking-tight mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-12">
           {t("title")}
         </h2>
 

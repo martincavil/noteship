@@ -25,10 +25,10 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-[#0F0F0F] py-24 px-6">
+    <section id="how-it-works" className="bg-[#0F0F0F] py-8 md:py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             {t("title")}
           </h2>
         </div>

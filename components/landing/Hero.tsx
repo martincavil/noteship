@@ -332,7 +332,7 @@ export function Hero({ spotsLeft }: { spotsLeft: number }) {
         </div>
 
         {/* Headline */}
-        <h1 className="animate-fade-up delay-100 text-[clamp(48px,8vw,90px)] font-extrabold leading-[0.90] tracking-[-0.04em] text-white mt-6 mb-6">
+        <h1 className="animate-fade-up delay-100 text-[clamp(36px,8vw,90px)] font-extrabold leading-[0.90] tracking-[-0.04em] text-white mt-6 mb-6">
           {t("headline1")}
           <br />
           <span className="text-gradient-orange">{t("headline2")}</span>

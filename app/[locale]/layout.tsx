@@ -14,14 +14,32 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://noteship.app"),
   title: "Noteship — Your product updates, beautifully told.",
   description:
-    "The simplest changelog tool for indie makers. Beautiful public page, embeddable widget, automatic email notifications.",
+    "The simplest changelog tool for indie makers. Public changelog page, embeddable widget, automatic email notifications. Live in 5 minutes.",
   openGraph: {
     title: "Noteship — Your product updates, beautifully told.",
     description:
-      "The simplest changelog tool for indie makers. Beautiful public page, embeddable widget, automatic email notifications.",
+      "The simplest changelog tool for indie makers. Public changelog page, embeddable widget, automatic email notifications. Live in 5 minutes.",
+    url: "https://noteship.app",
+    siteName: "Noteship",
     type: "website",
+    images: [
+      {
+        url: "/cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Noteship — Your product updates, beautifully told.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noteship — Your product updates, beautifully told.",
+    description:
+      "The simplest changelog tool for indie makers. Public changelog page, embeddable widget, automatic email notifications. Live in 5 minutes.",
+    images: ["/cover.png"],
   },
 };
 

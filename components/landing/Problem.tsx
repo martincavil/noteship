@@ -34,10 +34,10 @@ export function Problem() {
   ];
 
   return (
-    <section className="bg-[#0F0F0F] py-24 px-6">
+    <section className="bg-[#0F0F0F] py-8 md:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-white mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
             {t("title")}
           </h2>
           <p className="text-secondary text-lg">{t("subtitle")}</p>

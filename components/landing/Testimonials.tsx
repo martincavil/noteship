@@ -89,8 +89,13 @@ function CardFace({
           : "#111111",
       }}
     >
-      <QuoteIcon color={isBack ? "rgba(255,107,0,0.7)" : "rgba(255,107,0,0.4)"} />
-      <p className="text-sm leading-relaxed flex-1" style={{ color: isBack ? "#bbb" : "#A0A0A0" }}>
+      <QuoteIcon
+        color={isBack ? "rgba(255,107,0,0.7)" : "rgba(255,107,0,0.4)"}
+      />
+      <p
+        className="text-sm leading-relaxed flex-1"
+        style={{ color: isBack ? "#bbb" : "#A0A0A0" }}
+      >
         {data.text}
       </p>
       <div
@@ -111,7 +116,10 @@ function CardFace({
         </div>
         {isBack && (
           <div className="ml-auto shrink-0">
-            <span className="text-[9px] font-medium tracking-wider uppercase" style={{ color: "rgba(255,107,0,0.5)" }}>
+            <span
+              className="text-[9px] font-medium tracking-wider uppercase"
+              style={{ color: "rgba(255,107,0,0.5)" }}
+            >
               ↻ flip
             </span>
           </div>
@@ -156,8 +164,12 @@ function FlipCard({
     <div
       style={{ perspective: "1200px" }}
       className="cursor-pointer h-full"
-      onMouseEnter={() => { hoveredRef.current = true; }}
-      onMouseLeave={() => { hoveredRef.current = false; }}
+      onMouseEnter={() => {
+        hoveredRef.current = true;
+      }}
+      onMouseLeave={() => {
+        hoveredRef.current = false;
+      }}
       onClick={() => setFlipped((f) => !f)}
     >
       {/* Flip wrapper */}
@@ -204,25 +216,85 @@ export function Testimonials() {
   const t = useTranslations("testimonials");
 
   const fronts: CardData[] = [
-    { name: t("t1Name"), handle: t("t1Handle"), role: t("t1Role"), text: t("t1Text") },
-    { name: t("t2Name"), handle: t("t2Handle"), role: t("t2Role"), text: t("t2Text") },
-    { name: t("t3Name"), handle: t("t3Handle"), role: t("t3Role"), text: t("t3Text") },
-    { name: t("t4Name"), handle: t("t4Handle"), role: t("t4Role"), text: t("t4Text") },
-    { name: t("t5Name"), handle: t("t5Handle"), role: t("t5Role"), text: t("t5Text") },
-    { name: t("t6Name"), handle: t("t6Handle"), role: t("t6Role"), text: t("t6Text") },
+    {
+      name: t("t1Name"),
+      handle: t("t1Handle"),
+      role: t("t1Role"),
+      text: t("t1Text"),
+    },
+    {
+      name: t("t2Name"),
+      handle: t("t2Handle"),
+      role: t("t2Role"),
+      text: t("t2Text"),
+    },
+    {
+      name: t("t3Name"),
+      handle: t("t3Handle"),
+      role: t("t3Role"),
+      text: t("t3Text"),
+    },
+    {
+      name: t("t4Name"),
+      handle: t("t4Handle"),
+      role: t("t4Role"),
+      text: t("t4Text"),
+    },
+    {
+      name: t("t5Name"),
+      handle: t("t5Handle"),
+      role: t("t5Role"),
+      text: t("t5Text"),
+    },
+    {
+      name: t("t6Name"),
+      handle: t("t6Handle"),
+      role: t("t6Role"),
+      text: t("t6Text"),
+    },
   ];
 
   const backs: CardData[] = [
-    { name: t("b1Name"), handle: t("b1Handle"), role: t("b1Role"), text: t("b1Text") },
-    { name: t("b2Name"), handle: t("b2Handle"), role: t("b2Role"), text: t("b2Text") },
-    { name: t("b3Name"), handle: t("b3Handle"), role: t("b3Role"), text: t("b3Text") },
-    { name: t("b4Name"), handle: t("b4Handle"), role: t("b4Role"), text: t("b4Text") },
-    { name: t("b5Name"), handle: t("b5Handle"), role: t("b5Role"), text: t("b5Text") },
-    { name: t("b6Name"), handle: t("b6Handle"), role: t("b6Role"), text: t("b6Text") },
+    {
+      name: t("b1Name"),
+      handle: t("b1Handle"),
+      role: t("b1Role"),
+      text: t("b1Text"),
+    },
+    {
+      name: t("b2Name"),
+      handle: t("b2Handle"),
+      role: t("b2Role"),
+      text: t("b2Text"),
+    },
+    {
+      name: t("b3Name"),
+      handle: t("b3Handle"),
+      role: t("b3Role"),
+      text: t("b3Text"),
+    },
+    {
+      name: t("b4Name"),
+      handle: t("b4Handle"),
+      role: t("b4Role"),
+      text: t("b4Text"),
+    },
+    {
+      name: t("b5Name"),
+      handle: t("b5Handle"),
+      role: t("b5Role"),
+      text: t("b5Text"),
+    },
+    {
+      name: t("b6Name"),
+      handle: t("b6Handle"),
+      role: t("b6Role"),
+      text: t("b6Text"),
+    },
   ];
 
   return (
-    <section className="py-24 px-6 bg-background">
+    <section className="py-8 md:py-24 px-6 bg-background">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-white tracking-tight mb-4">

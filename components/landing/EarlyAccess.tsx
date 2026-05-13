@@ -4,15 +4,10 @@ import { WaitlistForm } from "@/components/ui/WaitlistForm";
 export function EarlyAccess({ spotsLeft }: { spotsLeft: number }) {
   const t = useTranslations("earlyAccess");
 
-  const perks = [
-    t("perk1"),
-    t("perk2"),
-    t("perk3"),
-    t("perk4"),
-  ];
+  const perks = [t("perk1"), t("perk2"), t("perk3"), t("perk4")];
 
   return (
-    <section id="waitlist" className="py-24 px-6 bg-background">
+    <section id="waitlist" className="py-8 md:py-24 px-6 bg-background">
       <div className="max-w-3xl mx-auto">
         <div
           className="rounded-2xl border border-accent/20 p-10 md:p-16"
@@ -26,12 +21,12 @@ export function EarlyAccess({ spotsLeft }: { spotsLeft: number }) {
               className="w-2 h-2 rounded-full bg-accent animate-pulse-dot"
               aria-hidden="true"
             />
-            <span className="text-accent font-bold text-lg font-mono">
+            <span className="text-accent font-bold text-sm md:text-lg font-mono">
               {t("spots", { spotsLeft })}
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
             {t("title")}
           </h2>
           <p className="text-secondary text-lg mb-8 leading-relaxed">

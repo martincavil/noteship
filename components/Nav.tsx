@@ -16,7 +16,7 @@ export function Nav() {
             height={28}
             unoptimized
           />
-          <span className="text-white font-bold text-xl tracking-tight">
+          <span className="hidden md:flex text-white font-bold text-xl tracking-tight">
             {t("brand")}
           </span>
         </div>

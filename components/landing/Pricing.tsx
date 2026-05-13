@@ -40,10 +40,10 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#0F0F0F] py-24 px-6">
+    <section id="pricing" className="bg-[#0F0F0F] py-8 md:py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
             {t("title")}
           </h2>
           <p className="text-secondary text-sm mb-8">{t("badge")}</p>
@@ -86,7 +86,7 @@ export function Pricing() {
                 {t("freeName")}
               </p>
               <div className="flex items-end gap-1">
-                <span className="text-5xl font-extrabold text-white">
+                <span className="text-4xl md:text-5xl font-extrabold text-white">
                   {t("freePrice")}
                 </span>
                 <span className="text-secondary mb-2">{t("freePeriod")}</span>
@@ -126,7 +126,7 @@ export function Pricing() {
                 {t("proName")}
               </p>
               <div className="flex items-end gap-1">
-                <span className="text-5xl font-extrabold text-white transition-all duration-300">
+                <span className="text-4xl md:text-5xl font-extrabold text-white transition-all duration-300">
                   {yearly ? t("proYearlyPrice") : t("proPrice")}
                 </span>
                 <div className="mb-2">

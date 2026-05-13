@@ -18,7 +18,7 @@ export function FounderStory() {
   const t = useTranslations("founderStory");
 
   return (
-    <section className="py-24 px-6 bg-background">
+    <section className="py-8 md:py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         {/* Eyebrow */}
         <p className="text-accent text-xs font-medium tracking-widest uppercase mb-6">
@@ -26,7 +26,7 @@ export function FounderStory() {
         </p>
 
         {/* Headline */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.05] mb-12 max-w-2xl">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.05] mb-12 max-w-2xl">
           {t("title")}
         </h2>
 

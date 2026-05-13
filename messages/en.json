@@ -9,7 +9,7 @@
     "languageFr": "FR"
   },
   "hero": {
-    "badge": "Founding Member Deal: First 10 makers get priority access + 1 month Pro, on us.",
+    "badge": "Founding Member Deal: First 10 makers get priority access + 1 month Pro",
     "headline1": "You shipped.",
     "headline2": "Nobody noticed.",
     "subheadline": "Noteship gives every update a public page, an in-app badge, and an email to every subscriber. Live in 5 minutes.",
@@ -18,7 +18,7 @@
     "forWho3": "Small dev teams",
     "ctaPrimary": "Claim your founding spot →",
     "ctaSecondary": "See how it works",
-    "urgency": "✦ {spotsLeft} of 10 founding spots left · first 10 get 1 month Pro free",
+    "urgency": "✦ {spotsLeft} founding spots left · first 10 get 1 month Pro free",
     "socialProofCount": "340+",
     "socialProofLabel": "Join the exclusive waitlist.",
     "mockupUrl": "yourapp.com/changelog",
